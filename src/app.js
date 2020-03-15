@@ -1,7 +1,7 @@
-const express = require("express");
-const morgan = require("morgan");
+const express = require('express');
+const morgan = require('morgan');
 
-const routes = require("./routes");
+const routes = require('./routes');
 
 class App {
   constructor() {
@@ -13,7 +13,7 @@ class App {
 
   middlewares() {
     this.server.use(express.json());
-    this.server.use(morgan("common"));
+    this.server.use(morgan('common'));
   }
 
   routes() {
