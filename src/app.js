@@ -1,9 +1,9 @@
-const express = require('express');
-const morgan = require('morgan');
-const cors = require('cors');
-const helmet = require('helmet');
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import helmet from 'helmet';
 
-const routes = require('./routes');
+import routes from './routes';
 
 class App {
   constructor() {
@@ -15,9 +15,9 @@ class App {
 
   middlewares() {
     this.server.use(cors());
-    this.server.use(helmet());
     this.server.use(express.json());
     this.server.use(morgan('common'));
+    this.server.use(helmet());
   }
 
   routes() {
@@ -25,4 +25,4 @@ class App {
   }
 }
 
-module.exports = new App().server;
+export default new App().server;
