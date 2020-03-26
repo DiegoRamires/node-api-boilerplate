@@ -1,5 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
+const helmet = require('helmet');
 
 const routes = require('./routes');
 
@@ -12,6 +14,8 @@ class App {
   }
 
   middlewares() {
+    this.server.use(cors());
+    this.server.use(helmet());
     this.server.use(express.json());
     this.server.use(morgan('common'));
   }
