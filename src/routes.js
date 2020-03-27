@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
+import IndexController from './controllers/IndexController';
+
 const routes = new Router();
 
-routes.get('/', (req, res) => {
-  return res.json({ message: 'Hello World' });
-});
+routes.get('/', IndexController.index);
 
 export default routes;
