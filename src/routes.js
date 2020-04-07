@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import IndexController from './controllers/IndexController';
+import IndexController from './app/controllers/IndexController';
 
 const routes = new Router();
 
